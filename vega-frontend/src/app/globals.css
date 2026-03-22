@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@source "../**/*.{ts,tsx}";
+
+body {
+    @apply bg-white text-gray-900;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Minimalist selection color */
+::selection {
+    @apply bg-indigo-50 text-indigo-700;
+}
+
+/* Simple transition for all interactives */
+a, button, input, textarea {
+    @apply transition-all duration-200;
+}
+
+.border-minimal {
+  @apply border border-gray-100;
+}
+
+.shadow-minimal {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.card-minimal {
+  @apply bg-white border border-gray-50 rounded-3xl overflow-hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
