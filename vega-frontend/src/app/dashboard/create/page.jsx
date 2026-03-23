@@ -39,7 +39,7 @@ export default function CreateBlogPage() {
       <div className="max-w-4xl mx-auto">
 
         {/* Top Bar */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
           <Link
             href="/dashboard"
             className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 font-semibold text-sm transition group"

@@ -68,7 +68,7 @@ export default function DashboardPage() {
       <div className="max-w-6xl mx-auto space-y-8">
         
         
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
             <p className="text-sm text-gray-500">

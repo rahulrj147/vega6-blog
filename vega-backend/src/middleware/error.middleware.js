@@ -1,5 +1,6 @@
 const ApiError = require("../utils/apiError");
 const multer = require("multer");
+const { NODE_ENV } = require("../config/env.config");
 
 const errorHandler = (err, req, res, next) => {
   let { statusCode = 500, message = "Internal Server Error" } = err;
@@ -20,7 +21,7 @@ const errorHandler = (err, req, res, next) => {
     success: false,
     statusCode,
     message,
-    ...(process.env.NODE_ENV === "development" ? { stack: err.stack } : {}),
+    ...(NODE_ENV === "development" ? { stack: err.stack } : {}),
   };
 
   res.status(statusCode).json(response);

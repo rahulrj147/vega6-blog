@@ -2,6 +2,7 @@ const CommonService = require("./common.service");
 const User = require("../models/user.model");
 const ApiError = require("../utils/apiError");
 const { generateTokens, verify } = require("../utils/token");
+const { REFRESH_TOKEN_SECRET } = require("../config/env.config");
 
 class UserService extends CommonService {
   constructor() {
@@ -33,7 +34,7 @@ class UserService extends CommonService {
 
   async refreshAccessToken(refreshToken) {
     try {
-      const decoded = verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+      const decoded = verify(refreshToken, REFRESH_TOKEN_SECRET);
       const user = await User.findById(decoded.id);
 
       if (!user || user.refreshToken !== refreshToken) {

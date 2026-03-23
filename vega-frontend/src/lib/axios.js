@@ -1,7 +1,9 @@
 import axios from "axios";
 
+import { NEXT_PUBLIC_API_URL as apiBaseURL } from "@/config/env.config";
+
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5010/api/v1",
+  baseURL: apiBaseURL,
   headers: { "Content-Type": "application/json" },
 });
 
@@ -24,7 +26,7 @@ api.interceptors.response.use(
         if (!refreshToken) throw new Error("No refresh token available");
 
         const { data } = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5010/api/v1"}/users/refresh`,
+          `${apiBaseURL}/users/refresh`,
           { refreshToken }
         );
         
