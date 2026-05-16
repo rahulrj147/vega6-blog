@@ -30,7 +30,7 @@ class CommonService {
       result,
       pagination: {
         totalItems,
-        totalPages: Math.ceil(totalItems / limit),
+        totalPages: Math.ceil(totalItems/limit),
         currentPage: parseInt(page),
         itemsPerPage: parseInt(limit),
       },
